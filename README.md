@@ -1,79 +1,80 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# Apple Sign-In with React Native
 
-# Getting Started
+This project demonstrates how to implement Apple Sign-In in a React Native application using `@invertase/react-native-apple-authentication` and Firebase authentication with `@react-native-firebase/auth`.
 
->**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
+## Table of Contents
 
-## Step 1: Start the Metro Server
+- [Features](#features)
+- [Prerequisites](#prerequisites)
+- [Installation](#installation)
+- [Running the App](#running-the-app)
+- [Project Structure](#project-structure)
+- [Code Overview](#code-overview)
+- [Contributing](#contributing)
+- [License](#license)
 
-First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
+## Features
 
-To start Metro, run the following command from the _root_ of your React Native project:
+- Apple Sign-In integration with Firebase authentication.
+- Persistent storage of user information (name and email) using AsyncStorage.
+- Automatic retrieval of user information on subsequent sign-ins.
+- Simple user interface to demonstrate sign-in and sign-out functionality.
+
+## Prerequisites
+
+Before you begin, ensure you have met the following requirements:
+
+- You have installed [Node.js](https://nodejs.org/) and [npm](https://www.npmjs.com/).
+- You have installed [React Native CLI](https://reactnative.dev/docs/environment-setup).
+- You have a Firebase project set up. Follow the [Firebase setup instructions](https://firebase.google.com/docs/android/setup) to add Firebase to your Android project.
+- You have an Apple Developer account and have configured Apple Sign-In. Follow the [Apple Sign-In setup instructions](https://invertase.io/oss/react-native-apple-authentication/quick-start/ios) for iOS.
+
+## Installation
+
+1. Clone the repository:
+
+    ```bash
+    git clone https://github.com/your-username/apple-signin-react-native.git
+    cd apple-signin-react-native
+    ```
+
+2. Install dependencies:
+
+    ```bash
+    npm install
+    ```
+
+3. Link the native dependencies:
+
+    ```bash
+    npx pod-install
+    ```
+
+4. Configure Firebase:
+
+- Follow the instructions to [set up Firebase for your project](https://firebase.google.com/docs/android/setup).
+- Download the `google-services.json` file for Android and place it in the `android/app` directory.
+- Download the `GoogleService-Info.plist` file for iOS and place it in the `ios` directory.
+
+## Running the App
+
+### iOS
 
 ```bash
-# using npm
-npm start
-
-# OR using Yarn
-yarn start
+npx react-native run-ios
 ```
 
-## Step 2: Start your Application
 
-Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _root_ of your React Native project. Run the following command to start your _Android_ or _iOS_ app:
+# Code Overview
 
-### For Android
+## App.js
 
-```bash
-# using npm
-npm run android
+	•	Handles the main logic of the application.
+	•	Manages user state and AsyncStorage.
+	•	Contains the sign-in and sign-out functionality.
 
-# OR using Yarn
-yarn android
-```
+## AppleSignIn.js
 
-### For iOS
-
-```bash
-# using npm
-npm run ios
-
-# OR using Yarn
-yarn ios
-```
-
-If everything is set up _correctly_, you should see your new app running in your _Android Emulator_ or _iOS Simulator_ shortly provided you have set up your emulator/simulator correctly.
-
-This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
-
-## Step 3: Modifying your App
-
-Now that you have successfully run the app, let's modify it.
-
-1. Open `App.tsx` in your text editor of choice and edit some lines.
-2. For **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Developer Menu** (<kbd>Ctrl</kbd> + <kbd>M</kbd> (on Window and Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (on macOS)) to see your changes!
-
-   For **iOS**: Hit <kbd>Cmd ⌘</kbd> + <kbd>R</kbd> in your iOS Simulator to reload the app and see your changes!
-
-## Congratulations! :tada:
-
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+	•	Handles the Apple Sign-In button and authentication process.
+	•	Requests Apple Sign-In with full name and email scopes.
+	•	Signs in with Firebase using the obtained Apple credential.
