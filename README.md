@@ -23,7 +23,7 @@ Before you begin, ensure you have met the following requirements:
 1. Clone the repository:
 
     ```bash
-    [https://github.com/Saif-09/AppleAuthRNativeApp.git](https://github.com/Saif-09/AppleAuthRNativeApp.git)
+    [https://github.com/Saif-09/AppleAuthRNativeApp.git]
     cd AppleAuthRNativeApp
     ```
 
