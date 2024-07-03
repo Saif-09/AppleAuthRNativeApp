@@ -23,8 +23,8 @@ Before you begin, ensure you have met the following requirements:
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/your-username/apple-signin-react-native.git
-    cd apple-signin-react-native
+    [git clone https://github.com/your-username/apple-signin-react-native.git](https://github.com/Saif-09/AppleAuthRNativeApp.git)
+    cd AppleAuthRNativeApp
     ```
 
 2. Install dependencies:
