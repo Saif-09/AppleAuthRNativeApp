@@ -2,17 +2,6 @@
 
 This project demonstrates how to implement Apple Sign-In in a React Native application using `@invertase/react-native-apple-authentication` and Firebase authentication with `@react-native-firebase/auth`.
 
-## Table of Contents
-
-- [Features](#features)
-- [Prerequisites](#prerequisites)
-- [Installation](#installation)
-- [Running the App](#running-the-app)
-- [Project Structure](#project-structure)
-- [Code Overview](#code-overview)
-- [Contributing](#contributing)
-- [License](#license)
-
 ## Features
 
 - Apple Sign-In integration with Firebase authentication.
